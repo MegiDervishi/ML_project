@@ -12,7 +12,7 @@ The database is composed by 27,558 RGB images of 64 by 64 pixels. The images are
 ### PCA vs t-SNE 
 The dataset is multidimensional, so we perform dimensionality reduction using PCA to analyze it better. We have plotted 5000 points of infected (1) and uninfected (0) cells. As we see the data is not distinguishable. Hence, we use t-SNE and obtain an improvement compared to PCA, some sort of division, however it is impossible to clearly classify the two classes of the dataset. This implies that a cell-image depends on many features which contain crucial information that cannot be reduced directly to two dimensions.
 
-<img src="figures/pca_tsne.png">
+<img src="figures/pca_tsne.png" width ="600">
 
 ### Data Augmentation
 By closely studying the dataset we observe that the images are overall very similar within their category. In order to avoid overfitting for our CNN model we augment the data by adding noise, rotating it multiple times or blurring it as seen in the plot. To optimize and save memory we use the pre-defined kera’s function ImageDataGenerator. The training set experiences such modification, while the testing set stays the same. 
@@ -26,7 +26,7 @@ After trying different layers, the final CNN contains about 10 layers 3 of which
 ## 4.	Transfer Learning
 The fundamental idea behind transfer learning is that when huge CNNs are trained over humongous datasets, such as ImageNet, then the CNN learns not only how to detect the features of the given dataset but also learns some “skills” such as recognizing certain shapes. Therefore, by finding the right CNN we can apply our dataset to it and get a better accuracy of prediction. After some research, we choose to train on ResNet50 and VGG16. We used them as feature extractors for linear classifiers using the LinearSVC() function and we observe that the accuracy for VGG16 is much higher than that of ResNet50. Since VGG16 gives a better result we use that to better classify the features of the dataset and re-plot the PCA and t-SNE. Compared to the first PCA/t-SNE plots the separation of the two classes is much clearer, however needs still improvement. The other option we tried was to re-train the VGG16 model by tuning the last layers or adding more layers. We obtain an accuracy of prediction equal to 0.94.
 
-<img src="figures/transfer.png">
+<img src="figures/transfer.png" width = "600">
 
 
 ## 5.	Unsupervised Learning
