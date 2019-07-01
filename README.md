@@ -1,4 +1,4 @@
-# Malaria_Detection
+# Malaria_Detection - Machine Learning Project
 # Megi Dervishi
 
 ## 1.	Introduction
