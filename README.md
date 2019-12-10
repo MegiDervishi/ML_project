@@ -1,5 +1,4 @@
 # Malaria_Detection - Machine Learning Project
-# Megi Dervishi
 
 ## 1.	Introduction
 Malaria remains one of the most life-threatening diseases caused by parasites which are transmitted by the bite of a mosquito. Diagnosing such disease is time consuming. The topic of our project is hence – How can we best classify infected and uninfected cells of malaria using machine learning?  The approach we have undertaken is by first carefully studying the dataset, data augmentation, building our own CNN model, using transfer learning i.e already done CNNs and lastly unsupervised learning using k-Means on the output of a trained CNN to discover if there are other subgroups/classes within the dataset.
